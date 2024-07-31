@@ -1,0 +1,66 @@
+﻿@page 
+@model Index
+@{
+    ViewData["Title"] = "Bem vindos!";
+}
+
+
+<h1>Home</h1>
+
+@* @using System.Globalization - pq colocamos no _ViewImports para ser usado em todas as páginas 
+ @model MyRazorApp.Pages.Index - pq colocamos no _ViewImports 
+ @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers 
+*@
+@* @{
+    Layout = "Shared/_Layout"; qd não tem nada lê do _ViewStart
+} *@
+
+@* <!DOCTYpe html>
+<html>
+    <head>     
+        <title></title>
+    </head>
+    <body>
+        <div>*@
+            @* @Html.RenderPartialAsync("Shared/NavMenuPartial") - não funciou assim*@
+            @*<partial name="Shared/NavMenuPartial" />   TagHelper que só funciona com a linha @addTagHelper no início. Para ciclos For... não tem.*@
+
+
+
+           @*  <h1>Categorias</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>Title</td>
+                        <td>Price</td>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var category in Model.Categories)
+                {
+                    <tr>
+                        <td>@category.Id</td>
+                        <td>@category.Title</td>
+                        <td>@category.Price.ToString(format:"C", provider: new CultureInfo(name:"pt-PT"))</td>
+                    </tr>
+                }
+                </tbody>
+            </table> *@
+       
+            
+            @* </div>
+
+        <div>
+            @for (var i = 0; i <= 10; i++)
+            {
+                <p>Item @i</p>
+            }
+        </div>
+
+
+    </body>
+</html> *@
+
+
+

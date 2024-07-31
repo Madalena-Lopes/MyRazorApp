@@ -1,0 +1,28 @@
+﻿@page "~/categorias/{skip?}/{take?}"
+@model MyRazorApp.Pages.CategoriesModel
+@{
+    ViewData["Title"] = "Categorias"; 
+}
+@* view data - informação temporária que fica no servidor - não é exposto para a tela. Passa informação de baixo para cima. Para a página principal por exemplo. *@
+
+
+<h1>Categorias</h1>
+<table>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Title</td>
+            <td>Price</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model.Categories)
+        {
+            <tr>
+                <td>@category.Id</td>
+                <td>@category.Title</td>
+                <td>@category.Price.ToString(format: "C", provider: new CultureInfo(name: "pt-PT"))</td>
+            </tr>
+        }
+    </tbody>
+</table>

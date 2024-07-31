@@ -1,0 +1,27 @@
+﻿<!DOCTYpe html>
+<html>
+<head>
+    <title> @ViewData["Title"] - My Razor App</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"> @* asp-append-version="true" indica no source da pagina que se eu trocar o meu ficheiro de estilo de css ele saber rapidamente que é uma nova versão. Sem isto o estilo de css ficaria tempos infinitos em cache. CTRL+f5 para atualizar a pagina - limpando cache  *@
+    <link rel="stylesheet" href="~/MyRazorApp.styles.css" asp-append-version="true"> @*style.css - arquivo que vai ser gerado sobre demanda*@
+</head>
+<body>
+    <header>
+        <partial name="Shared/NavMenuPartial" />   @*TagHelper que só funciona com a linha @addTagHelper no início. Para ciclos For... não tem.*@
+    </header>
+        
+    <main>        
+        @RenderBody() @* corpo da aplicação a ser renderizado aqui *@
+    </main>
+
+    <footer>
+        2024 - Powered By balta.io
+    </footer>
+
+    @RenderSection(name:"scripts", required: false)
+</body>
+</html>
+
+
+
+
